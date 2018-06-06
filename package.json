@@ -11,10 +11,10 @@
     "@babel/core": "^7.0.0-beta.49",
     "@babel/plugin-transform-runtime": "^7.0.0-beta.49",
     "@babel/preset-env": "^7.0.0-beta.49",
-    "@babel/preset-stage-2": "^7.0.0-beta.49",
+    "@babel/preset-stage-3": "^7.0.0-beta.49",
     "@babel/runtime": "^7.0.0-beta.49",
     "babel-loader": "^8.0.0-beta",
-    "documentation": "^7.1.0",
+    "documentation": "^8.0.0",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.12.0",
@@ -23,8 +23,8 @@
     "eslint-plugin-standard": "^3.1.0",
     "eslint-plugin-vue": "^4.5.0",
     "jsdoc": "^3.5.5",
-    "webpack": "^4.10.2",
-    "webpack-cli": "^2.1.4",
+    "webpack": "^4.11.0",
+    "webpack-cli": "^3.0.2",
     "webpack-merge": "^4.1.2",
     "webpack-serve": "^1.0.2"
   }

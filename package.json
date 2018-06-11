@@ -13,6 +13,7 @@
     "@babel/preset-env": "^7.0.0-beta.49",
     "@babel/preset-stage-3": "^7.0.0-beta.49",
     "@babel/runtime": "^7.0.0-beta.49",
+    "@hubvisor/eslint-config-hubvisor": "^0.1.1",
     "babel-loader": "^8.0.0-beta",
     "documentation": "^8.0.0",
     "eslint": "^4.19.1",

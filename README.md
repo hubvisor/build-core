@@ -16,4 +16,4 @@ Pins common build configuration and dependencies for hubvisor projects.
 
 ## TODO:
 
-- [ ] add @hubvisor/eslint-config-hubvisor to build-core dependencies when published
+- [x] add @hubvisor/eslint-config-hubvisor to build-core dependencies when published

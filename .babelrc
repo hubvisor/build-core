@@ -11,6 +11,11 @@
   "plugins": [
     "@babel/plugin-transform-runtime"
   ],
+  "ignore": [
+    "**/__tests__/**/*.js",
+    "**/*.test.js",
+    "**/*.spec.js"
+  ],
   "env": {
     "test": {
       "presets": [
@@ -19,7 +24,8 @@
       ],
       "plugins": [
         "@babel/plugin-transform-runtime"
-      ]
+      ],
+      "ignore": null
     }
   }
 }

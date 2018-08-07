@@ -20,7 +20,8 @@ module.exports = (api) => {
     '@babel/plugin-proposal-json-strings'
   ]
 
-  if (process.env.MODULE_TYPE === 'cjs') {
+  // jest needs code to be transpiled to CJS
+  if (process.env.NODE_ENV === 'test' || process.env.MODULE_TYPE === 'cjs') {
     envOpts.modules = 'commonjs'
   }
 

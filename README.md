@@ -8,8 +8,8 @@ Pins common build configuration and dependencies for hubvisor projects.
 
 ## Usage
 
-- *Babel*: in your .babelrc:
-`"extends": "@hubvisor/build-core/babelrc.json"`
+- *Babel*: in your babel.config.js:
+`module.exports = require('@hubvisor/build-core/babelrc.json')`
 
 - *ESLint*: In your .eslintrc.js
 `extends: '@hubvisor/hubvisor'`

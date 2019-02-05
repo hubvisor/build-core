@@ -3,6 +3,7 @@ module.exports = (api) => {
 
   const envOpts = {
     modules: false,
+    // useBuiltIns: 'usage', // includes polyfills based on usage
     targets: {
       browsers: [ '> 1%', 'last 2 versions', 'not ie <= 8' ]
     }
@@ -13,7 +14,10 @@ module.exports = (api) => {
   ]
 
   const plugins = [
-    '@babel/plugin-transform-runtime',
+    [ '@babel/plugin-transform-runtime', {
+      corejs: 2, // injects non-polluting polyfills
+      useESModules: true
+    } ],
     '@babel/plugin-syntax-dynamic-import',
     '@babel/plugin-syntax-import-meta',
     '@babel/plugin-proposal-class-properties',

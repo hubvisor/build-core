@@ -1,33 +1,29 @@
 module.exports = (api) => {
   api.cache(true)
 
-  const envOpts = {
-    modules: false,
-    // useBuiltIns: 'usage', // includes polyfills based on usage
-    targets: {
-      browsers: [ '> 1%', 'last 2 versions', 'not ie <= 8' ]
-    }
-  }
+  // jest needs code to be transpiled to CJS
+  const useCommonJs = process.env.NODE_ENV === 'test' || process.env.MODULE_TYPE === 'cjs'
 
   const presets = [
-    [ '@babel/preset-env', envOpts ]
+    [ '@babel/preset-env', {
+      modules: useCommonJs ? 'commonjs' : false,
+      // useBuiltIns: 'usage', // includes polyfills based on usage
+      targets: {
+        browsers: [ '> 1%', 'last 2 versions', 'not ie <= 8' ]
+      }
+    } ]
   ]
 
   const plugins = [
     [ '@babel/plugin-transform-runtime', {
       corejs: 2, // injects non-polluting polyfills
-      useESModules: true
+      useESModules: !useCommonJs
     } ],
     '@babel/plugin-syntax-dynamic-import',
     '@babel/plugin-syntax-import-meta',
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-proposal-json-strings'
   ]
-
-  // jest needs code to be transpiled to CJS
-  if (process.env.NODE_ENV === 'test' || process.env.MODULE_TYPE === 'cjs') {
-    envOpts.modules = 'commonjs'
-  }
 
   return {
     presets,

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "noUnusedLocals": true,
+    "esModuleInterop": true,
+  },
+  "exclude": [ ".yarn-cache", "node_modules", "**/node_modules/*", "**/dist/*", "**/docs/*" ]
+}

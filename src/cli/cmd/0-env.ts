@@ -6,12 +6,12 @@ import { fail, log, stdout } from '../../lib/log'
 
 const shellInterpolateEnv = (str: string): string => {
   return Object.entries(process.env)
-    .sort(( [ name1 ], [ name2 ] ) => name2.length - name1.length) // sort longer env names to be matched first to replace in a greedy way
+    .sort(([ name1 ], [ name2 ]) => name2.length - name1.length) // sort longer env names to be matched first to replace in a greedy way
     .reduce((prev, [ name, value ]) => {
       const escapedName = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') // escape env name to make it regexp compatible
 
       return prev.replace(new RegExp(`\\$${escapedName}`, 'g'), value || '') // replace $NAME by value
-  }, str)
+    }, str)
 }
 
 const runCommandIfNeeded = async () => {
@@ -19,7 +19,7 @@ const runCommandIfNeeded = async () => {
   if (cmd) {
     const argsFmt = args
       .map(shellInterpolateEnv) // simulate shell variable interpolation
-      .map(a => a.includes(' ') ? `"${a}"` : a)  // if the arg contains space, quote it
+      .map(a => a.includes(' ') ? `"${a}"` : a) // if the arg contains space, quote it
       .join(' ')
     log(chalk`{gray $ ${cmd} ${argsFmt}}`)
     try {
@@ -54,7 +54,7 @@ export const handler = async (argv: Arguments<EnvArgs>) => {
   Object.assign(process.env, config.detected)
 
   if (argv.export) {
-    Object.entries(config.detected).forEach(([ name, value]) => {
+    Object.entries(config.detected).forEach(([ name, value ]) => {
       stdout(`export ${name}=${value}`)
     })
   } else {

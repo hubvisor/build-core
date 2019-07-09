@@ -5,7 +5,7 @@ export interface Detector {
   path: string
 }
 
-export type DetectResult = { [name: string]: string | undefined }
+export type DetectResult = { [name: string]: string }
 
 type DetectorsByName = { [name: string]: Promise<string | undefined> }
 type FileDetectorsByName = { [name: string]: Awaitable<string | undefined> } // file can provide a value or a promise
@@ -28,7 +28,7 @@ export const detect = async (detectors: Detector[]): Promise<DetectResult> => {
   }
 
   const detected = await Promise.all(Object.entries(detectorsByName).map(([ name, eventualValue ]) => {
-    return eventualValue.then(val => ({ [name]: val }))
+    return eventualValue.then(val => ({ [name]: val || '' }))
   }))
 
   return Object.assign({}, ...detected)

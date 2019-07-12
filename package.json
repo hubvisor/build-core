@@ -69,6 +69,7 @@
     "inquirer": "^6.4.1",
     "inquirer-autocomplete-prompt": "^1.0.1",
     "jest": "^24.8.0",
+    "jest-extended": "^0.11.2",
     "jest-image-snapshot": "^2.9.0",
     "jest-runner-eslint": "^0.7.4",
     "less": "^3.9.0",

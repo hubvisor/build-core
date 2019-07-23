@@ -11,7 +11,8 @@ const _debug: Logger = (...args) => console.error('🐞', ...args)
 
 export const debug: Logger = isDebug ? _debug : nolog
 export const log: Logger = console.error
-export const fail: Logger = (...args) => log('❌', ...args)
-export const success: Logger = (...args) => log('✅', ...args)
-export const check: Logger = (...args) => log('✅', ...args)
+export const fail: Logger = (...args) => log('❌ ', ...args)
+export const warn: Logger = (...args) => log('⚠️ ', ...args)
+export const success: Logger = (...args) => log('✅ ', ...args)
+export const check: Logger = (...args) => log('✅ ', ...args)
 export const stdout: Logger = console.log

@@ -8,7 +8,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "noUnusedLocals": true,
-    "esModuleInterop": true,
+    "esModuleInterop": true
   },
   "exclude": [ ".yarn-cache", "node_modules", "**/node_modules/*", "**/dist/*", "**/docs/*" ]
 }
